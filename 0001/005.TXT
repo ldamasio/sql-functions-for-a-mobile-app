@@ -1,0 +1,50 @@
+Exemplo de erro:
+
+***
+
+Na conta 2.1.6.01 --- o saldo final (95.815,41) 
+não bate com o saldo final da query da função 
+retorna_saldo_contas_na_data (99013.41).
+
+2.1.6 na função no pOstgers é 2.858.517,52
+Já no SIG está: 1.377.709,27
+
+***
+
+
+Detalhe: contas Passivo, então o saldo é credor
+então é Crédito - Débito.
+
+Se você contas a receber, seria Débito - Crédito (pra chegar no saldo)
+
+---
+
+No retornod a função retorna_saldo_contas_na_data não está
+retornando a conta 1.1.1.1 (???? por que???)
+
+Esta conta não tem saldo (pq é uma conta sintética)
+
+Pra montar o saldo dessa conta é somente somando 
+o saldo das contas analíticas
+
+---
+estratégia inicial: pegar a mov conta desde o início
+(sem o checkpoint)
+---
+estratégia 2: pega o saldo do último checkpoint
+e soma com o saldo do movimento pós checkpoint.
+---
+estratégia 3:
+em vez de pegar a movimentacao detalhada
+pegar a movimentação resumida por dia.
+***resumo diário***
+---
+combinação de checkpoint com resumo diário 
+mix de estr 1 e estr 2!
+----
+
+
+
+
+
+
